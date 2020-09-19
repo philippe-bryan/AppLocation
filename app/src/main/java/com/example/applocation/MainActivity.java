@@ -28,44 +28,19 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText txtID;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
-        txtID = (EditText)findViewById(R.id.txtID);
     }
 
-    public void btnPesqOnClick(View v){
-        InputMethodManager inputManager = (InputMethodManager)
-                getSystemService(Context.INPUT_METHOD_SERVICE);
-        if (inputManager != null){
-            inputManager.hideSoftInputFromWindow(v.getWindowToken(),
-                    InputMethodManager.HIDE_NOT_ALWAYS);
-        }
-
-        EditText txtID = (EditText) findViewById(R. id.txtID);
-
-        String intentID = txtID.getText().toString();
-
-        Intent intent = new Intent(this, RecebeDados.class);
-        Bundle bundleID = new Bundle();
-        Toast.makeText(this, "Carregando...", Toast.LENGTH_LONG).show();
-        bundleID.putString("key_ID", String.valueOf(intentID));
-        intent.putExtras(bundleID);
-        startActivity(intent);
-
+    public void PesqHeroOnClick(View pesq){
+        Intent intentHero = new Intent(this, PesquisaHero.class);
+        startActivity(intentHero);
     }
 
-    public void PesqIdOnClick(View mais){
-        Uri webpage = Uri.parse("https://superheroapi.com/ids.html");
-        Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-
-        startActivity(webIntent);
+    public void AbrirGeoOnClick(View abrir){
+        Intent intentGeo = new Intent(this, GeoLocation.class);
+        startActivity(intentGeo);
     }
 }

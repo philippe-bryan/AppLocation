@@ -7,51 +7,27 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout3"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/lblID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lblID" />
-
-        <EditText
-            android:id="@+id/txtID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/txtID"
-            android:inputType="textPersonName" />
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btnPesq"
+            android:id="@+id/btnHeroAPI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="btnPesqOnClick"
-            android:text="@string/btnPesq" />
-
-        <TextView
-            android:id="@+id/lblDesejo"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:text="@string/lblDesejo" />
+            android:onClick="PesqHeroOnClick"
+            android:text="@string/btnHeroAPI" />
 
         <Button
-            android:id="@+id/lblPesqId"
+            android:id="@+id/btnGeo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="PesqIdOnClick"
-            android:text="@string/lblPesqId" />
-
+            android:onClick="AbrirGeoOnClick"
+            android:text="@string/btnGeo" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

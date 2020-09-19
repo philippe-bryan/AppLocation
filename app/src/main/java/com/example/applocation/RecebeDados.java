@@ -77,7 +77,7 @@ public class RecebeDados extends AppCompatActivity {
     }
 
     public void VoltarOnClick(View voltar){
-        Intent intentReturn = new Intent(this, MainActivity.class);
+        Intent intentReturn = new Intent(this, PesquisaHero.class);
         startActivity(intentReturn);
     }
 }

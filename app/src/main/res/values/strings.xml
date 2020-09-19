@@ -13,4 +13,7 @@
     <string name="btnPesq">Pesquisar</string>
     <string name="btnVoltar">Voltar</string>
     <string name="lblPesqId">Ver Lista</string>
+    <string name="btnHeroAPI">Pesquisar Herois</string>
+    <string name="btnGeo">Verificar Localização</string>
+
 </resources>
