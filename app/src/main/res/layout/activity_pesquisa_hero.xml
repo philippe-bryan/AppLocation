@@ -31,8 +31,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/txtID"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/btnPesq"

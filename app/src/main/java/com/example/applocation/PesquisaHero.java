@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -23,9 +25,8 @@ public class PesquisaHero extends AppCompatActivity {
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
         txtID = (EditText)findViewById(R.id.txtID);
-    }
+        }
 
     public void btnPesqOnClick(View v){
         InputMethodManager inputManager = (InputMethodManager)
@@ -35,18 +36,15 @@ public class PesquisaHero extends AppCompatActivity {
                     InputMethodManager.HIDE_NOT_ALWAYS);
         }
 
-        EditText txtID = (EditText) findViewById(R. id.txtID);
-
         String intentID = txtID.getText().toString();
 
-        Intent intent = new Intent(this, RecebeDados.class);
-        Bundle bundleID = new Bundle();
-        Toast.makeText(this, "Carregando...", Toast.LENGTH_LONG).show();
-        bundleID.putString("key_ID", String.valueOf(intentID));
-        intent.putExtras(bundleID);
-        startActivity(intent);
-
-    }
+            Intent intent = new Intent(this, RecebeDados.class);
+            Bundle bundleID = new Bundle();
+            Toast.makeText(this, "Carregando...", Toast.LENGTH_LONG).show();
+            bundleID.putString("key_ID", String.valueOf(intentID));
+            intent.putExtras(bundleID);
+            startActivity(intent);
+        }
 
     public void PesqIdOnClick(View mais){
         Uri webpage = Uri.parse("https://superheroapi.com/ids.html");
