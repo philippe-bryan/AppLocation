@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Super Herois</string>
+
+    <string name="lblID">Digite o ID do personagem: </string>
+    <string name="lblName">Codnome: Não encontrado</string>
+    <string name="lblFull">Nome Real: Não encontrado</string>
+    <string name="lblCityNasc">Local de Nascimento: Não encontrado</string>
+    <string name="lblInfo">Informações do Heroi</string>
+    <string name="lblDesejo">Clique no botão a baixo para ver a lista de personagens</string>
+
+    <string name="txtID">De 1 a 732 </string>
+
+    <string name="btnPesq">Pesquisar</string>
+    <string name="btnVoltar">Voltar</string>
+    <string name="lblPesqId">Ver Lista</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/lblID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblID" />
+
+        <EditText
+            android:id="@+id/txtID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/txtID"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btnPesq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnPesqOnClick"
+            android:text="@string/btnPesq" />
+
+        <TextView
+            android:id="@+id/lblDesejo"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="@string/lblDesejo" />
+
+        <Button
+            android:id="@+id/lblPesqId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="PesqIdOnClick"
+            android:text="@string/lblPesqId" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
