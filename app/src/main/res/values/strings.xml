@@ -7,6 +7,9 @@
     <string name="lblCityNasc">Local de Nascimento: Não encontrado</string>
     <string name="lblInfo">Informações do Heroi</string>
     <string name="lblDesejo">Clique no botão a baixo para ver a lista de personagens</string>
+    <string name="lblLong">Longitude: </string>
+    <string name="lblLat">Latitude: </string>
+    <string name="lblLocal">Local encontrado: </string>
 
     <string name="txtID">De 1 a 732 </string>
 
@@ -15,5 +18,7 @@
     <string name="lblPesqId">Ver Lista</string>
     <string name="btnHeroAPI">Pesquisar Herois</string>
     <string name="btnGeo">Verificar Localização</string>
-
+    <string name="btnLocaliza">Verificar minha localização</string>
+    <string name="btnVer">Ver local das cordenadas</string>
+    <string name="btnMaps">Ver no mapa</string>
 </resources>
