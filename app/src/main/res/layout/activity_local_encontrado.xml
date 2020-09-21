@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="67dp"
         android:layout_marginEnd="1dp"
@@ -21,15 +21,22 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/lblLocal"
+            android:id="@+id/lblLat"
             android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:text="@string/lblLocal" />
+            android:layout_height="wrap_content"
+            android:text="@string/lblLat" />
+
+        <TextView
+            android:id="@+id/lblLong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblLong" />
 
         <Button
             android:id="@+id/btnMaps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="MapaOnClick"
             android:text="@string/btnMaps" />
 
         <Button

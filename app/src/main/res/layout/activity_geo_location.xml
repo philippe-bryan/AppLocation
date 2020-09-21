@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
@@ -21,29 +21,24 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/lblLong"
+            android:id="@+id/lblinforma"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:text="@string/lblLong" />
-
-        <TextView
-            android:id="@+id/lblLat"
-            android:layout_width="match_parent"
-            android:layout_height="98dp"
-            android:text="@string/lblLat" />
+            android:layout_height="match_parent"
+            android:text="@string/lblinforma"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/btnLocaliza"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:onClick="LocalizaOnClick"
             android:text="@string/btnLocaliza" />
 
         <Button
             android:id="@+id/btnVer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="VerLocalOnClick"
+            android:layout_height="match_parent"
+            android:onClick="VerOnClick"
             android:text="@string/btnVer" />
 
         <Button
@@ -52,5 +47,7 @@
             android:layout_height="wrap_content"
             android:onClick="VoltarOnClick"
             android:text="@string/btnVoltar" />
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

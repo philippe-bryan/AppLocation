@@ -11,27 +11,24 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class GeoLocation extends AppCompatActivity {
 
-    TextView lblLat, lblLong;
     Double latude, longitude;
+    TextView lblInforma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_geo_location);
-
-        lblLat = (TextView) findViewById(R.id.lblLat);
-        lblLong = (TextView) findViewById(R.id.lblLong);
     }
 
     public void LocalizaOnClick(View v) {
+        lblInforma = (TextView) findViewById(R.id.lblinforma);
+        lblInforma.setText("Carregando...");
         pedirPermissoes();
     }
 
@@ -52,7 +49,7 @@ public class GeoLocation extends AppCompatActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     configurarServico();
                 } else {
-                    Toast.makeText(this, "Não vai funcionar!!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Permita que o aplicativo use sua localização para ele funcionar corretamente.", Toast.LENGTH_LONG).show();
                 }
                 return;
             }
@@ -82,25 +79,30 @@ public class GeoLocation extends AppCompatActivity {
         Double latPoint = location.getLatitude();
         Double lngPoint = location.getLongitude();
 
-        lblLat.setText("Latitude: "+latPoint.toString());
-        lblLong.setText("Longitude: "+lngPoint.toString());
-
         latude = latPoint;
         longitude = lngPoint;
+
+        lblInforma = (TextView) findViewById(R.id.lblinforma);
+        lblInforma.setText("Sua localização está sendo monitorada.");
     }
 
-    public void VerLocalOnClick(View ver){
-        String intentLat = latude.toString();
-        String intentLong = longitude.toString();
+    public void VerOnClick(View a){
 
-        Intent intent = new Intent(this, LocalEncontrado.class);
-        Bundle bundleLat = new Bundle();
-        Bundle bundleLong = new Bundle();
-        bundleLat.putString("key_lat", String.valueOf(intentLat));
-        bundleLong.putString("key_long", String.valueOf(intentLong));
-        intent.putExtras(bundleLat);
-        intent.putExtras(bundleLong);
-        startActivity(intent);
+        if(latude == null && longitude == null){
+            Toast.makeText(this, "Erro, precisa da localização!", Toast.LENGTH_LONG).show();
+        }
+        else {
+            String intentLat = latude.toString();
+            String intentLong = longitude.toString();
+            Intent intent = new Intent(this, LocalEncontrado.class);
+            Bundle bundleLat = new Bundle();
+            Bundle bundleLong = new Bundle();
+            bundleLat.putString("key_lat", String.valueOf(intentLat));
+            bundleLong.putString("key_long", String.valueOf(intentLong));
+            intent.putExtras(bundleLat);
+            intent.putExtras(bundleLong);
+            startActivity(intent);
+        }
     }
 
     public void VoltarOnClick(View voltar){

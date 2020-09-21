@@ -1,21 +1,18 @@
 package com.example.applocation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.location.Address;
-import android.location.Geocoder;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.List;
-import java.util.Locale;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LocalEncontrado extends AppCompatActivity {
 
-    TextView lblLocal;
+    TextView lblLat, lblLong;
     String recebidos1, recebidos2;
+    double latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +26,13 @@ public class LocalEncontrado extends AppCompatActivity {
         recebidos1 = bundleLat.getString("key_lat");
         recebidos2 = bundleLong.getString("key_long");
 
-        lblLocal = (TextView) findViewById(R.id.lblLocal);
-        lblLocal.setText(recebidos1+" e "+recebidos2);
+        latitude = Double.parseDouble(recebidos1);
+        longitude = Double.parseDouble(recebidos2);
+
+        lblLat = (TextView) findViewById(R.id.lblLat);
+        lblLong = (TextView) findViewById(R.id.lblLong);
+        lblLat.setText("Latitude: "+latitude);
+        lblLong.setText("Longitude: "+longitude);
     }
 
     public void VoltarOnClick(View voltar){
@@ -38,4 +40,9 @@ public class LocalEncontrado extends AppCompatActivity {
         startActivity(intentReturn);
     }
 
+    public void MapaOnClick(View mapa){
+        Uri mappage = Uri.parse("https://www.google.com/maps/search/?api=1&query="+latitude+"%2C"+longitude+"&hl=pt-br");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, mappage);
+        startActivity(mapIntent);
+    }
 }
