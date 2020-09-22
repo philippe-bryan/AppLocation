@@ -29,12 +29,6 @@ public class PesquisaHero extends AppCompatActivity {
         }
 
     public void btnPesqOnClick(View v){
-        InputMethodManager inputManager = (InputMethodManager)
-                getSystemService(Context.INPUT_METHOD_SERVICE);
-        if (inputManager != null){
-            inputManager.hideSoftInputFromWindow(v.getWindowToken(),
-                    InputMethodManager.HIDE_NOT_ALWAYS);
-        }
             String intentID = txtID.getText().toString();
             Intent intent = new Intent(this, RecebeDados.class);
             Bundle bundleID = new Bundle();
