@@ -35,9 +35,7 @@ public class PesquisaHero extends AppCompatActivity {
             inputManager.hideSoftInputFromWindow(v.getWindowToken(),
                     InputMethodManager.HIDE_NOT_ALWAYS);
         }
-
-        String intentID = txtID.getText().toString();
-
+            String intentID = txtID.getText().toString();
             Intent intent = new Intent(this, RecebeDados.class);
             Bundle bundleID = new Bundle();
             Toast.makeText(this, "Carregando...", Toast.LENGTH_LONG).show();

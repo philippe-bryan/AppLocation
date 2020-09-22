@@ -40,6 +40,20 @@
             android:text="@string/btnMaps" />
 
         <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="SalvarOnClick"
+            android:text="@string/btnSalvar" />
+
+        <Button
+            android:id="@+id/btnRecuperar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="RecuperarOnClick"
+            android:text="@string/btnRecuperar" />
+
+        <Button
             android:id="@+id/btnVoltar4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

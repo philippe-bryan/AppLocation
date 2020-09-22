@@ -10,6 +10,11 @@
     <string name="lblLong">Longitude: </string>
     <string name="lblLat">Latitude: </string>
     <string name="lblinforma"></string>
+    <string name="lblHName">Nome Real: </string>
+    <string name="lblHCod">Codnome: </string>
+    <string name="lblHCity">Local de Nascimento: </string>
+    <string name="lblArquivo">Digite o nome do Arquivo: </string>
+    <string name="lblSelect">Escolha onde quer salvar o arquivo: </string>
 
     <string name="txtID">De 1 a 732 </string>
 
@@ -21,4 +26,10 @@
     <string name="btnLocaliza">Monitorar Localização</string>
     <string name="btnVer">Ver minhas cordenadas</string>
     <string name="btnMaps">Ver no mapa</string>
+    <string name="btnSalvar">Salvar coordenadas</string>
+    <string name="btnRecuperar">Recuperar Coordenada anterior</string>
+    <string name="btnRegistro">Registrar Heroi</string>
+    <string name="btnEscolha">Escolha de Salvamento</string>
+    <string name="btnInterno">Memoria do Aplicativo</string>
+    <string name="btnExterno">Memoria do Aparelho</string>
 </resources>

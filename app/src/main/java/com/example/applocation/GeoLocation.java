@@ -50,6 +50,8 @@ public class GeoLocation extends AppCompatActivity {
                     configurarServico();
                 } else {
                     Toast.makeText(this, "Permita que o aplicativo use sua localização para ele funcionar corretamente.", Toast.LENGTH_LONG).show();
+                    lblInforma = (TextView) findViewById(R.id.lblinforma);
+                    lblInforma.setText("Localização não encontrada.");
                 }
                 return;
             }

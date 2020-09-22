@@ -29,5 +29,6 @@
             android:layout_height="wrap_content"
             android:onClick="AbrirGeoOnClick"
             android:text="@string/btnGeo" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
