@@ -49,6 +49,13 @@
             android:text="@string/lblCityNasc" />
 
         <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="SalvarDadosOnClick"
+            android:text="@string/btnSalvarDados" />
+
+        <Button
             android:id="@+id/btnVoltar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

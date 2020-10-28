@@ -76,6 +76,10 @@ public class RecebeDados extends AppCompatActivity {
         }
     }
 
+    public void SalvarDadosOnClick(View salvar){
+
+    }
+
     public void VoltarOnClick(View voltar){
         Intent intentReturn = new Intent(this, PesquisaHero.class);
         startActivity(intentReturn);
