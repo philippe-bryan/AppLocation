@@ -24,6 +24,13 @@
             android:text="@string/btnHeroAPI" />
 
         <Button
+            android:id="@+id/btnSalvos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="SalvosOnClick"
+            android:text="@string/btnSalvos" />
+
+        <Button
             android:id="@+id/btnGeo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

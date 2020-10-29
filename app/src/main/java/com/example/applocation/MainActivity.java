@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentHero);
     }
 
+    public void SalvosOnClick(View salvos){
+        Intent intentHero = new Intent(this, MostraHeroi.class);
+        startActivity(intentHero);
+    }
+
     public void AbrirGeoOnClick(View abrir){
         Intent intentGeo = new Intent(this, GeoLocation.class);
         startActivity(intentGeo);

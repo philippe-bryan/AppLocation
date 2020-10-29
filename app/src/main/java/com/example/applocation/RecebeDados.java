@@ -6,6 +6,8 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -17,10 +19,13 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
-public class RecebeDados extends AppCompatActivity {
+public class RecebeDados extends AppCompatActivity{
+    int from_Where_I_Am_Coming = 0;
+    private DataBaseHelper mydb ;
 
     String queryString;
-    TextView lblName, lblFull, lblCityNasc;
+    TextView name, fullName, placeOfBirth;
+    Herois herois;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +36,9 @@ public class RecebeDados extends AppCompatActivity {
         Bundle bundleID = intent2.getExtras();
         queryString = bundleID.getString("key_ID");
 
-        lblName = (TextView)findViewById(R.id.lblName);
-        lblFull = (TextView)findViewById(R.id.lblFull);
-        lblCityNasc = (TextView)findViewById(R.id.lblCityNasc);
+        name = (TextView)findViewById(R.id.lblName);
+        fullName = (TextView)findViewById(R.id.lblFull);
+        placeOfBirth = (TextView)findViewById(R.id.lblCityNasc);
 
         String id = queryString;
         try {
@@ -47,13 +52,15 @@ public class RecebeDados extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "Erro!", Toast.LENGTH_LONG).show();
         }
+
+        mydb = new DataBaseHelper(this);
     }
 
     public void Carregar(String id) throws JSONException, IOException {
         CarregaDados carregaDados = NetworkUtils.localizar(queryString);
-        lblName.setText("Codnome: " + carregaDados.getName());
-        lblFull.setText("Nome Real: " + carregaDados.getFullName());
-        lblCityNasc.setText("Local de Nascimento: " + carregaDados.getPlaceOfBirth());
+        name.setText("Codnome: " + carregaDados.getName());
+        fullName.setText("Nome Real: " + carregaDados.getFullName());
+        placeOfBirth.setText("Local de Nascimento: " + carregaDados.getPlaceOfBirth());
     }
 
     @Override
@@ -78,6 +85,16 @@ public class RecebeDados extends AppCompatActivity {
 
     public void SalvarDadosOnClick(View salvar){
 
+        if(mydb.insertHiro(new Herois(name.getText().toString(), fullName.getText().toString(),
+                placeOfBirth.getText().toString()))){
+            Toast.makeText(getApplicationContext(), "Salvo com sucesso",
+                    Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(getApplicationContext(), "falha",
+                    Toast.LENGTH_SHORT).show();
+        }
+        Intent intent = new Intent(getApplicationContext(),PesquisaHero.class);
+        startActivity(intent);
     }
 
     public void VoltarOnClick(View voltar){

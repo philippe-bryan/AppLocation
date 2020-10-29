@@ -15,6 +15,12 @@
     <string name="lblHCity">Local de Nascimento: </string>
     <string name="lblArquivo">Digite o nome do Arquivo: </string>
     <string name="lblSelect">Escolha onde quer salvar o arquivo: </string>
+    <string name="lblTitle">Herois Salvos</string>
+    <string name="lblSemRegistros">Não há nenhum registro de heroi salvo!</string>
+    <string name="lblRegistro">Registro do Heroi</string>
+    <string name="lblNome">Nome:</string>
+    <string name="lblCodnome">Codinome:</string>
+    <string name="lblCidade">Cidade de Nascimento:</string>
 
     <string name="txtID">De 1 a 732 </string>
 
@@ -33,4 +39,5 @@
     <string name="btnInterno">Memoria do Aplicativo</string>
     <string name="btnExterno">Memoria do Aparelho</string>
     <string name="btnSalvarDados">Salvar Dados</string>
+    <string name="btnSalvos">Herois Registrados</string>
 </resources>
