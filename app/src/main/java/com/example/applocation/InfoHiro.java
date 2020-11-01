@@ -2,6 +2,8 @@ package com.example.applocation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -32,7 +34,6 @@ public class InfoHiro extends AppCompatActivity {
             int Value = extras.getInt("idHiro");
 
             if(Value>0){
-                //means this is the view part not the add contact part.
                 Cursor rs = mydb.getData(Value);
                 id_To_Update = Value;
                 rs.moveToFirst();
@@ -58,5 +59,16 @@ public class InfoHiro extends AppCompatActivity {
                 cidade.setClickable(false);
             }
         }
+    }
+
+    //public void DeleteOnClick(View delete){
+    //                    mydb.deleteHiro(id_To_Update);
+    //                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+    //                    startActivity(intent);
+    //                }
+
+    public void VoltarOnClick(View voltar){
+        Intent intentReturn = new Intent(this, MostraHeroi.class);
+        startActivity(intentReturn);
     }
 }

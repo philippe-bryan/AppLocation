@@ -31,7 +31,14 @@
 
         <ListView
             android:id="@+id/lvListaHiro"
-            android:layout_width="392dp"
-            android:layout_height="649dp" />
+            android:layout_width="match_parent"
+            android:layout_height="549dp" />
+
+        <Button
+            android:id="@+id/btnVoltar7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="VoltarOnClick"
+            android:text="@string/btnVoltar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

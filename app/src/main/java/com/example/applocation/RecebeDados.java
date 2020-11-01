@@ -24,7 +24,8 @@ public class RecebeDados extends AppCompatActivity{
     private DataBaseHelper mydb ;
 
     String queryString;
-    TextView name, fullName, placeOfBirth;
+    TextView lblName, lblFullName, lblPlaceOfBirth;
+    String name, fullName, placeOfBirth;
     Herois herois;
 
     @Override
@@ -36,9 +37,9 @@ public class RecebeDados extends AppCompatActivity{
         Bundle bundleID = intent2.getExtras();
         queryString = bundleID.getString("key_ID");
 
-        name = (TextView)findViewById(R.id.lblName);
-        fullName = (TextView)findViewById(R.id.lblFull);
-        placeOfBirth = (TextView)findViewById(R.id.lblCityNasc);
+        lblName = (TextView)findViewById(R.id.lblName);
+        lblFullName = (TextView)findViewById(R.id.lblFull);
+        lblPlaceOfBirth = (TextView)findViewById(R.id.lblCityNasc);
 
         String id = queryString;
         try {
@@ -58,9 +59,13 @@ public class RecebeDados extends AppCompatActivity{
 
     public void Carregar(String id) throws JSONException, IOException {
         CarregaDados carregaDados = NetworkUtils.localizar(queryString);
-        name.setText("Codnome: " + carregaDados.getName());
-        fullName.setText("Nome Real: " + carregaDados.getFullName());
-        placeOfBirth.setText("Local de Nascimento: " + carregaDados.getPlaceOfBirth());
+        lblName.setText("Codnome: " + carregaDados.getName());
+        lblFullName.setText("Nome Real: " + carregaDados.getFullName());
+        lblPlaceOfBirth.setText("Local de Nascimento: " + carregaDados.getPlaceOfBirth());
+
+        name = carregaDados.getName();
+        fullName = carregaDados.getFullName();
+        placeOfBirth = carregaDados.getPlaceOfBirth();
     }
 
     @Override
@@ -84,9 +89,7 @@ public class RecebeDados extends AppCompatActivity{
     }
 
     public void SalvarDadosOnClick(View salvar){
-
-        if(mydb.insertHiro(new Herois(name.getText().toString(), fullName.getText().toString(),
-                placeOfBirth.getText().toString()))){
+        if(mydb.insertHiro(new Herois(name, fullName, placeOfBirth))){
             Toast.makeText(getApplicationContext(), "Salvo com sucesso",
                     Toast.LENGTH_SHORT).show();
         } else{

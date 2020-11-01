@@ -40,4 +40,5 @@
     <string name="btnExterno">Memoria do Aparelho</string>
     <string name="btnSalvarDados">Salvar Dados</string>
     <string name="btnSalvos">Herois Registrados</string>
+    <string name="btnDelete">Apagar Registro</string>
 </resources>

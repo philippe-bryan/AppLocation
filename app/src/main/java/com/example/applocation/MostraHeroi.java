@@ -2,6 +2,8 @@ package com.example.applocation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -10,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -68,5 +71,10 @@ public class MostraHeroi extends AppCompatActivity {
             });
             obj.setVisibility(View.VISIBLE);
         }
+    }
+
+    public void VoltarOnClick(View voltar){
+        Intent intentReturn = new Intent(this, MainActivity.class);
+        startActivity(intentReturn);
     }
 }

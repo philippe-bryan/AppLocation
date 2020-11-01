@@ -48,7 +48,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public Cursor getData(int idHiro) {
         SQLiteDatabase dbHiro = this.getReadableDatabase();
-        Cursor res =  dbHiro.rawQuery( "select * from contacts where idHiro="+idHiro+"", null );
+        Cursor res =  dbHiro.rawQuery( "select * from herois where idHiro="+idHiro+"", null );
         return res;
     }
 
@@ -71,7 +71,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public Integer deleteHiro (Integer idHiro) {
         SQLiteDatabase dbHiro = this.getWritableDatabase();
         return dbHiro.delete(HIRO_TABLE_NAME,
-                "idHiro = ? ",
+                "idHiro = ?",
                 new String[] { Integer.toString(idHiro) });
     }
 
@@ -100,7 +100,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         ArrayList<Herois> lista = new ArrayList<Herois>() ;
 
         SQLiteDatabase dbHiro = this.getReadableDatabase();
-        Cursor res =  dbHiro.rawQuery( "select * from contacts", null );
+        Cursor res =  dbHiro.rawQuery( "select * from herois", null );
         res.moveToFirst();
 
         while(res.isAfterLast() == false){
