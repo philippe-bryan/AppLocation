@@ -61,11 +61,28 @@ public class InfoHiro extends AppCompatActivity {
         }
     }
 
-    //public void DeleteOnClick(View delete){
-    //                    mydb.deleteHiro(id_To_Update);
-    //                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-    //                    startActivity(intent);
-    //                }
+    public void DeleteOnClick(View delete){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.deleteHeroi)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        mydb.deleteHiro(id_To_Update);
+                        Toast.makeText(getApplicationContext(), R.string.delete_ok,
+                                Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(),MostraHeroi.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+
+        AlertDialog d = builder.create();
+        d.setTitle(R.string.deleteHeroi);
+        d.show();
+    }
 
     public void VoltarOnClick(View voltar){
         Intent intentReturn = new Intent(this, MostraHeroi.class);

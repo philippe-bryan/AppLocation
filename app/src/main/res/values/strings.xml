@@ -41,4 +41,14 @@
     <string name="btnSalvarDados">Salvar Dados</string>
     <string name="btnSalvos">Herois Registrados</string>
     <string name="btnDelete">Apagar Registro</string>
+    <string name="btnDeleteAll">Apagar Todos</string>
+
+    <string name="delete_ok">Exclusão efetuada com successo"</string>
+    <string name="deleteHeroi">Confirma a exclusão?</string>
+    <string name="deleteAll">Confirma a exclusão de todos os registros?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+
+    <string name="large_text"></string>
+    <string name="action_settings">Excluir</string>
 </resources>

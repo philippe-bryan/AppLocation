@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InfoHiro"></activity>
+        <activity android:name=".InfoHiro" />
         <activity android:name=".MostraHeroi" />
         <activity android:name=".LocalEncontrado" />
         <activity android:name=".GeoLocation" />
